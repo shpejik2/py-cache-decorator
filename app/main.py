@@ -1,10 +1,11 @@
 from typing import Callable
+from typing import Any
 
 
 def cache(func: Callable) -> Callable:
     results = {}
 
-    def wrapper(*args, **kwargs):
+    def wrapper(*args, **kwargs) -> Any:
         if args in results:
             print("Getting from cache")
             return results[args]
